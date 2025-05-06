@@ -1,0 +1,17 @@
+<menu-bar [windowConfig]="windowConfig"></menu-bar>
+
+<kendo-tabstrip (tabSelect)="bringtoFront()">
+    <kendo-tabstrip-tab title="Details" [selected]="true">
+      <ng-template kendoTabContent>
+
+        <form class="k-form k-form-horizontal" [formGroup]="formGroup">
+            <fieldset class="k-form-fieldset" kendoTooltip >
+              <form-controller [windowConfig]="windowConfig" [formGroup]="formGroup"></form-controller>
+            </fieldset>
+        </form>
+
+        </ng-template>
+    </kendo-tabstrip-tab>
+</kendo-tabstrip>
+
+<navigation-bar [windowConfig]="windowConfig"></navigation-bar>

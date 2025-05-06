@@ -1,0 +1,5 @@
+<div *ngFor="let field of windowConfig.master.model" style="display: inline-block;">
+  <formfield-textbox *ngIf="field.hidden == false && field.controltype == 'text'" [formGroup]="formGroup" [model]="field"></formfield-textbox>
+  <formfield-datepicker *ngIf="field.hidden == false && field.controltype == 'datepicker'" [formGroup]="formGroup" [model]="field"></formfield-datepicker>
+  <formfield-combobox *ngIf="field.hidden == false && field.controltype == 'combobox'" [formGroup]="formGroup" [model]="field"></formfield-combobox>
+</div>

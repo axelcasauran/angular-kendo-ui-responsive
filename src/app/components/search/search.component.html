@@ -1,0 +1,87 @@
+<div class="searchGrid">
+
+  <kendo-grid
+    [data]="data"
+    [loading]="loading"
+    [pageable]="{
+        buttonCount: buttonCount,
+        info: info,
+        type: type,
+        pageSizes: pageSizes,
+        previousNext: previousNext,
+        position: position
+      }"
+    filterable="menu"
+    [resizable]="true"
+
+    [pageSize]="state.take"
+    [skip]="state.skip"
+    [sortable]="true"
+    [sort]="state.sort"
+    [groupable]="false"
+    [group]="state.group"
+    [filter]="state.filter"
+    (dataStateChange)="dataStateChange($event)"
+
+    [selectable]="selectableSettings"
+    [kendoGridSelectBy]="windowConfig.search.key"
+    [(selectedKeys)]="mySelection"
+
+    style="padding-bottom: 0px;"
+    >
+    <ng-template kendoGridToolbarTemplate>
+        <button kendoButton icon="folder-open" (click)="openSelected()">Open Selected</button>
+        <button kendoButton icon="file-add">New</button>
+        <kendo-textbox
+            [placeholder]="customMsgService.translate('gridSearch')"
+            kendoTextBox
+            (afterValueChanged)="onFilter($event)"
+            [style.width.px]="320"
+            [clearButton]="true"
+        >
+        </kendo-textbox>
+        <kendo-grid-spacer></kendo-grid-spacer>
+        <kendo-dropdownbutton [data]="exportSettings" icon="export" (itemClick)="onExportClick()" [hidden]="windowConfig.configuration.isMobile">
+            Export To
+            <ng-template kendoDropDownButtonItemTemplate let-dataItem>
+                <span class="k-icon k-i-{{ dataItem.icon }}"></span>
+                <span>{{ dataItem.text }}</span>
+            </ng-template>
+        </kendo-dropdownbutton>
+    </ng-template>
+    <kendo-grid-checkbox-column [width]="40" [showSelectAll]="true" [style]="{ 'max-width': '40px' }" ></kendo-grid-checkbox-column>
+
+    <kendo-grid-column *ngFor="let column of columns"
+        field="{{ column.field }}"
+        title="{{ column.title }}"
+        format="{{ column.format }}"
+        [width]="column.width"
+        [minResizableWidth]="column.width / 1.5"
+        [filterable]="column.filterable"
+        [filter]="column.type"
+        [hidden]="windowConfig.configuration.isMobile ? column.hidden : false">
+    </kendo-grid-column>
+
+    <kendo-grid-pdf fileName="Employees.pdf" [repeatHeaders]="true"></kendo-grid-pdf>
+    <kendo-grid-excel fileName="Employees.xlsx"></kendo-grid-excel>
+
+    <ng-template
+        kendoPagerTemplate
+        let-totalPages="totalPages"
+        let-currentPage="currentPage"
+      >
+        <kendo-pager-page-sizes [pageSizes]="pageSizeSettings" [hidden]="windowConfig.configuration.isMobile"></kendo-pager-page-sizes>
+        <kendo-grid-spacer></kendo-grid-spacer>
+        <kendo-pager-prev-buttons></kendo-pager-prev-buttons>
+        <!-- <kendo-pager-numeric-buttons
+          [buttonCount]="buttonCount"
+        ></kendo-pager-numeric-buttons> -->
+        <kendo-pager-input></kendo-pager-input>
+        <kendo-pager-next-buttons></kendo-pager-next-buttons>
+        <!-- <kendo-grid-spacer></kendo-grid-spacer>         -->
+        <!-- <kendo-pager-info></kendo-pager-info> -->
+        <!-- <kendo-pager-input></kendo-pager-input> -->
+      </ng-template>
+  </kendo-grid>
+
+</div>

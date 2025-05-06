@@ -1,0 +1,16 @@
+<div class="crudMenu">
+  <kendo-toolbar (click)="bringtoFront()">
+      <kendo-toolbar-buttongroup selection="multiple">
+        <kendo-toolbar-button text="New" fillMode="flat" (click)="onNew()" *ngIf="windowConfig.configuration.type != 'singlegrid'"></kendo-toolbar-button>
+        <kendo-toolbar-button text="Save" fillMode="flat"></kendo-toolbar-button>
+        <kendo-toolbar-button text="Undo" fillMode="flat" (click)="onUndo()"></kendo-toolbar-button>
+        <kendo-toolbar-button text="Delete" fillMode="flat" (click)="onDelete()" *ngIf="windowConfig.configuration.type != 'singlegrid'"></kendo-toolbar-button>
+        <kendo-toolbar-button text="Search" fillMode="flat" (click)="onSearch()" *ngIf="windowConfig.configuration.type != 'singlegrid'"></kendo-toolbar-button>
+      </kendo-toolbar-buttongroup>
+      <kendo-toolbar-separator></kendo-toolbar-separator>
+      <kendo-toolbar-buttongroup selection="single">
+          <kendo-toolbar-button text="Close" fillMode="flat" (click)="onClose()"></kendo-toolbar-button>
+      </kendo-toolbar-buttongroup>
+  </kendo-toolbar>
+  <div kendoDialogContainer></div>
+</div>

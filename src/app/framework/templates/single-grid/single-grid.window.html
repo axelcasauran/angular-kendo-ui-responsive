@@ -1,0 +1,19 @@
+
+<div class="example-inner">
+    <loader [windowConfig]="windowConfig"></loader>
+  
+    <menu-bar [windowConfig]="windowConfig"></menu-bar>
+  
+    <kendo-tabstrip (tabSelect)="windowConfig.window.window.instance.bringToFront()">      
+        <kendo-tabstrip-tab title="Details" [selected]="true">
+          <ng-template kendoTabContent>            
+            <div class="" style="bottom: 0px; width: 100%;">
+              <grids [windowConfig]="windowConfig" [gridNumber]="0"></grids>
+            </div>               
+            </ng-template>
+        </kendo-tabstrip-tab>
+    </kendo-tabstrip>
+  
+    <navigation-bar [windowConfig]="windowConfig"></navigation-bar>
+  
+  </div>

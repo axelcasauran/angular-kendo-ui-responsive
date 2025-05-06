@@ -1,0 +1,105 @@
+<!-- [kendoGridInCellEditing]="createFormGroup" -->
+<!-- (cellClick)="cellClickHandler($event, grid, gridNumber)"
+      (cellClose)="cellCloseHandler($event, grid, gridNumber)" 
+      (add)="addHandler($event)"
+
+      (add)="addHandler($event)"
+      (cancel)="cancelHandler($event)"
+      (save)="saveHandler($event, gridNumber)"
+      (remove)="removeHandler($event)"
+      
+    -->
+<div class="grid-wrapper">
+  <kendo-grid
+        #grid
+        [inCellTab]="createFormGroup"      
+        [kendoGridInCellEditing]="createFormGroup"
+        [navigable]="true"
+
+        [kendoGridBinding]="windowConfig.details[gridNumber].bind"
+        filterable="menu"
+        [sortable]="true"
+        [resizable]="true"
+
+        [selectable]="selectableSettings"
+        [kendoGridSelectBy]="windowConfig.details[gridNumber].key"
+        [(selectedKeys)]="windowConfig.details[gridNumber].selected"
+        [rowSelected]="isRowSelected"          
+        
+        (filterChange)="filterChange($event, gridNumber)"
+        (click)="window.window.instance.bringToFront()"
+        
+        (cellClose)="cellCloseEdit($event, grid, gridNumber)" 
+        [style.height.px]="windowConfig.details[gridNumber].height"
+
+        [size]="smallSize"
+      >
+        <ng-template kendoGridToolbarTemplate>
+          <!-- <button kendoGridAddCommand icon="plus">Add</button> -->
+          <button kendoButton icon="plus" (click)="addRow(grid, gridNumber)" [disabled]="windowConfig.details[gridNumber].buttons.add"  *ngIf="!windowConfig.details[gridNumber].buttons.hideAdd == true">Add</button>
+          <button kendoButton icon="x" (click)="deleteRows(gridNumber)" [disabled]="windowConfig.details[gridNumber].buttons.remove"  *ngIf="!windowConfig.details[gridNumber].buttons.hideRemove == true">Remove</button>
+          <kendo-textbox
+              [placeholder]="customMsgService.translate('gridSearch')"
+              kendoTextBox
+              (valueChange)="onFilter($event, gridNumber)"
+              [(ngModel)]="windowConfig.details[gridNumber].filter"
+              [style.width.px]="300"
+              [clearButton]="true"
+          >
+          </kendo-textbox>   
+        </ng-template>
+        <kendo-grid-checkbox-column 
+          [width]="40"
+          [style]="{ 'width': '40px', 'max-width': '40px' }" 
+          [headerClass]="{ 'text-center': true }"
+          [class]="{ 'text-center': true }"
+          [resizable]="false"
+          [columnMenu]="false"
+          [locked]="true"
+          [showSelectAll]="true" >
+        </kendo-grid-checkbox-column>
+
+        <kendo-grid-column *ngFor="let column of windowConfig.details[gridNumber].columns"
+            [field]="column.field"
+            [title]="column.title"        
+            [format]="column.format"
+            [width]="column.width"
+            [minResizableWidth]="column.width / 1.5"
+            [editable]="column.editable"
+            [filterable]="column.filterable"
+            [filter]="column.type"
+            [hidden]="column.hidden"
+            >
+
+            <!-- let-formGroup="windowConfig.details[gridNumber].formBind" -->
+            <ng-template
+              kendoGridEditTemplate
+              let-dataItem="dataItem"              
+              *ngIf="column.combobox"
+            >
+              <kendo-dropdownlist
+                [filterable]="true"
+                [defaultItem]="column.combobox.default"
+                [data]="column.combobox.bind"
+                [textField]="column.combobox.textField"
+                [valueField]="column.combobox.valueField"
+                [valuePrimitive]="true"
+                [formControl]="windowConfig.details[gridNumber].formBind.get(column.combobox.valueField)"
+                (filterChange)="dropdownListFilter($event, column.combobox)"
+                fillMode="none"
+                style="border-style: none;"
+              >
+              </kendo-dropdownlist>
+            </ng-template>
+            <ng-template kendoGridCellTemplate let-dataItem *ngIf="column.combobox && column.combobox.fnDisplayText">
+              {{ column.combobox.fnDisplayText(dataItem[column.combobox.key], column.combobox) }}
+            </ng-template>
+
+        </kendo-grid-column>
+
+        <!-- <ng-template kendoGridNoRecordsTemplate height="100%">
+          <p>Loading....</p>
+        </ng-template> -->
+  </kendo-grid>
+  <!-- <div *ngIf="isLoading" class="k-i-loading"></div> -->
+</div>

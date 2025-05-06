@@ -1,0 +1,27 @@
+<div class="window-status-bar" (click)="bringtoFront()">
+    <div style="padding: 11px; float: left;">
+        <label>{{recordStatus}}</label>
+    </div>
+    <div style="float: right;">
+        <kendo-datapager
+        style="width: 100%; padding: 5px; height: 40px; border-style: none;"
+        [pageSize]="1"
+        [skip]="skip"
+        [total]="total"
+        [info]="false"
+        (pageChange)="onPageChange($event)"
+        *ngIf="windowConfig.configuration.type != 'singlegrid'"
+        >
+        <ng-template
+            kendoDataPagerTemplate
+            let-totalPages="totalPages"
+            let-currentPage="currentPage"
+        >
+            <kendo-datapager-prev-buttons style="margin-right: 5px;" fillMode="flat"></kendo-datapager-prev-buttons>
+            <label style="vertical-align: text-bottom;">{{ currentPage }} of {{ totalPages }}</label>
+            <kendo-datapager-next-buttons style="margin-left: 5px;" fillMode="flat"></kendo-datapager-next-buttons>
+            <button kendoButton icon="refresh" fillMode="flat" style="vertical-align: baseline;" (click)="onRefresh()">{{refreshLabel}}</button>
+        </ng-template>
+        </kendo-datapager>
+    </div>
+</div>

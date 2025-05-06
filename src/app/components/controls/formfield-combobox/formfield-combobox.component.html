@@ -1,0 +1,7 @@
+<div [formGroup]="formGroup" [style.paddingLeftt.px]="paddingRight" style="padding-left: 16px; width: 100%; max-width: fit-content; display: inline-block;">
+    <kendo-formfield orientation="vertical">
+        <kendo-label *ngIf="comboboxLabelDrillDownFn == null" class="k-label" [text]="labelText" [style.width.px]="labelWidth" style="display: -webkit-inline-box;"> <span *ngIf="isRequired == true" style="color:red; padding-left: 5px;">*</span></kendo-label>
+        <kendo-label *ngIf="comboboxLabelDrillDownFn != null" (click)="comboboxLabelDrillDownFn()" class="k-label" [text]="labelText" [style.width.px]="labelWidth" style="display: -webkit-inline-box; color: #0052cc; cursor: pointer;"> <span *ngIf="isRequired == true" style="color:red; padding-left: 5px;">*</span></kendo-label>
+        <kendo-combobox [formControlName]="field" [required]="isRequired" [data]="dataList" [allowCustom]="false" showErrorIcon="initial" [style.minWidth.px]="textboxWidth" (focus)="bringtoFront()"></kendo-combobox>
+    </kendo-formfield>
+</div>

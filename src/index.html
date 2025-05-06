@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>Coffee Warehouse | Kendo Angular UI</title>
+        <base href="/" />
+
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="icon" type="image/x-icon" href="favicon.ico" />
+        <link href="https://fonts.googleapis.com/css?family=Ubuntu&display=swap" rel="stylesheet" />
+
+        <link id="theme" rel="stylesheet" href="assets/kendo-theme-default/dist/all.css" />
+
+        
+    </head>
+    <body>
+        <app-root></app-root>        
+
+        <script> 
+            document.addEventListener("DOMContentLoaded", function(event) {
+                _test = setInterval(removeMarker,1000);
+                function removeMarker(){ 
+                    if(document != undefined) { 
+                        if(document.querySelectorAll('[kendowatermarkoverlay]').length > 0) { 
+                            document.querySelectorAll('[kendowatermarkoverlay]')[0].remove(); 
+                        } 
+                    } 
+                }
+            });
+        </script> 
+
+        <!-- <script>            
+            _test = setInterval(removeMarker,500);
+            function removeMarker(){ 
+                if($ != undefined) { 
+                    doc = $; 
+                    if(doc('[kendowatermarkoverlay]') != null) { 
+                        doc('[kendowatermarkoverlay]').remove(); 
+                    } 
+                } 
+            }
+        </script> -->
+    </body>
+</html>
