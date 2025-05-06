@@ -36,6 +36,7 @@ export class CommonService {
     sender.windowState = 'maximized';
 
     var _dom = document.getElementsByClassName('k-window-actions');
+    console.log('configureForMobile',_dom);
     if(_dom.length > 0) {
       _dom[_dom.length - 1].children[2]['hidden'] = true;
     }

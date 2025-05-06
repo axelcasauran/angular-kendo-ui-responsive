@@ -84,6 +84,7 @@ export class SearchComponent implements OnInit {
 
     public ngOnInit(): void {
       var me = this;
+      console.log('IS MOBILE > ', me.windowConfig.configuration.isMobile);
       if(me.windowConfig.configuration.isMobile) {
         me = me.common.configureForMobile(me);
       }

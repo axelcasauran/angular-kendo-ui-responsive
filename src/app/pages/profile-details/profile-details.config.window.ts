@@ -158,7 +158,7 @@ const employeeDetailFields : fields[] = [
     field: "title",
     title: "Title",
     format: "",
-    width: 400,
+    width: 300,
     required: false,
     type: "text", controltype: "text",
     hidden: false,
@@ -254,7 +254,7 @@ export class ProfileConfig {
     window: {
       window: ProfileDetailsWindow,
       title: "Profile Details",
-      width: 800,
+      width: 700,
       height: 700,
       resizable: true,
       recordSelected: [],

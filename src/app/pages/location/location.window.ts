@@ -11,7 +11,7 @@ const searchFields : fields[] = [
     field: "firstName",
     title: "First Name",
     format: "",
-    width: 120,
+    width: 150,
     filterable: true,
      type: "text", controltype: "text",
     hidden: false,
@@ -21,10 +21,10 @@ const searchFields : fields[] = [
     field: "lastName",
     title: "Last Name",
     format: "",
-    width: 180,
+    width: 150,
     filterable: true,
      type: "text", controltype: "text",
-    hidden: true,
+    hidden: false,
     required: false
   },
   {
