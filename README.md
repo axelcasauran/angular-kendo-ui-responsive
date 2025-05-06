@@ -2,10 +2,21 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.2.9.
 
+Desktop
 ![screenshot](src/assets//screenshot/1.png)
+Mobile
 ![screenshot](src/assets//screenshot/2.png)
+Desktop
 ![screenshot](src/assets//screenshot/3.png)
+Mobile
 ![screenshot](src/assets//screenshot/4.png)
+
+Profile Details screen
+- profile-details.window.html - reused a master-detail template and pass a props
+    "<master-detail [windowConfig]="windowConfig"></master-detail>"
+- profile-details.window.ts - global control functions are already in framework, all you need to add is your business logic
+- profile-details.config.window.ts - define column properties and attributes
+![screenshot](src/assets//screenshot/5.png)
 
 ## Development server
 
