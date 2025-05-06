@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "church-management": {
+    "angular-kendo-ui-responsive": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -27,7 +27,7 @@
               "@progress/kendo-angular-intl/locales/es/all",
               "@progress/kendo-angular-intl/locales/fr/all"
             ],
-            "outputPath": "dist/church-management",
+            "outputPath": "dist/angular-kendo-ui-responsive",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -100,10 +100,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "church-management:build:production"
+              "buildTarget": "angular-kendo-ui-responsive:build:production"
             },
             "development": {
-              "buildTarget": "church-management:build:development"
+              "buildTarget": "angular-kendo-ui-responsive:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -111,7 +111,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "buildTarget": "church-management:build"
+            "buildTarget": "angular-kendo-ui-responsive:build"
           }
         },
         "test": {

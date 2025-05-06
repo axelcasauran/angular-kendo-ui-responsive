@@ -16,7 +16,7 @@ import { PersonConfig } from '../../pages/person-management/person/person.window
   templateUrl: './layout.component.html'
 })
 export class LayoutComponent implements OnInit, OnDestroy {
-  title = 'church-management';
+  title = 'angular-kendo-ui-responsive';
   public selected = 'Team';
   public items: Array<any> = [];
   public customMsgService: CustomMessagesService;

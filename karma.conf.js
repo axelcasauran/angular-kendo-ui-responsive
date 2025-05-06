@@ -25,7 +25,7 @@ module.exports = function (config) {
       suppressAll: true // removes the duplicated traces
     },
     coverageReporter: {
-      dir: require('path').join(__dirname, './coverage/church-management'),
+      dir: require('path').join(__dirname, './coverage/angular-kendo-ui-responsive'),
       subdir: '.',
       reporters: [
         { type: 'html' },

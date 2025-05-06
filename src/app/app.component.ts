@@ -17,7 +17,7 @@ import { CustomMessagesService } from './services/custom-messages.service';
   templateUrl: './app.component.html'
 })
 export class AppComponent implements OnInit, OnDestroy {
-  title = 'church-management';
+  title = 'angular-kendo-ui-responsive';
   public selected = 'Team';
   public items: Array<any> = [];
   public customMsgService: CustomMessagesService;
