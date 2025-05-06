@@ -1,6 +1,8 @@
-# ChurchManagement
+# angular-kendo-ui-responsive
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.2.9.
+
+![screenshot](src/assets//screenshot/1.png)
 
 ## Development server
 
