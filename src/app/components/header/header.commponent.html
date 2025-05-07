@@ -7,10 +7,10 @@
         <div class="title">
             <h1> {{ this.customMsgService.translate('warehouse') }} </h1>
             <span class="vl"></span>
-            <h2 *ngIf="selectedPage"> {{ this.customMsgService.translate(selectedPage.toLowerCase()) }} </h2>
+            <h2 *ngIf="selectedPage"> {{ selectedPage }} </h2>
         </div>
 
-        <div class="settings">
+        <!-- <div class="settings">
             <span> {{ this.customMsgService.translate('language') }} </span>
             <kendo-dropdownlist
                 [data]="locales"
@@ -44,6 +44,6 @@
             imageSrc="assets/user.jpg"
             shape="circle"
         >
-        </kendo-avatar>
+        </kendo-avatar> -->
     </div>
 </div>

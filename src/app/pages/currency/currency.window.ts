@@ -90,7 +90,7 @@ export class CurrencyConfig {
     },
     window: {
       window: CurrencyComponent,
-      title: "Currency",
+      title: "Employee Roles",
       width: 600,
       height: 700,
       resizable: false,

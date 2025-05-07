@@ -118,7 +118,7 @@ const masterFields : fields[] = [
 export class LocationConfig extends FunctionService {
     LocationConfig : WindowConfiguration = {
     search: {
-      title: "Search Location",
+      title: "Search Employee",
       columns: searchFields,
       key: "employeeId",
       width: 800,
@@ -127,7 +127,7 @@ export class LocationConfig extends FunctionService {
     },
     window: {
       window: LocationComponent,
-      title: "Location",
+      title: "Employee",
       width: 380,
       height: 600,
       resizable: false,

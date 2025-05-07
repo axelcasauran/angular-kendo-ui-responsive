@@ -17,7 +17,7 @@ import { PersonConfig } from '../../pages/person-management/person/person.window
 })
 export class LayoutComponent implements OnInit, OnDestroy {
   title = 'angular-kendo-ui-responsive';
-  public selected = 'Team';
+  public selected = 'Dashboard';
   public items: Array<any> = [];
   public customMsgService: CustomMessagesService;
   public mode: DrawerMode = 'push';
@@ -80,34 +80,34 @@ export class LayoutComponent implements OnInit, OnDestroy {
 
     public drawerItems() {
                 return [
-            { id: 0, text: this.customMsgService.translate('team'), icon: 'k-i-grid', path: '/', selected: true },
-            { id: 1, text: this.customMsgService.translate('dashboard'), icon: 'k-i-chart-line-markers', path: '/dashboard', selected: false },
-            { id: 2, text: "Person", icon: 'k-i-user', path: '/person', selected: false },
-            { id: 3, text: this.customMsgService.translate('profile'), icon: 'k-i-user', path: '/profile', selected: false },
-            { separator: true },
-            { id: 4, text: this.customMsgService.translate('info'), icon: 'k-i-information', path: '/info', selected: false },
+            // { id: 0, text: this.customMsgService.translate('team'), icon: 'k-i-grid', path: '/', selected: true },
+            { id: 1, text: this.customMsgService.translate('dashboard'), icon: 'k-i-chart-line-markers', path: '/dashboard', selected: true },
+            // { id: 2, text: "Person", icon: 'k-i-user', path: '/person', selected: false },
+            // { id: 3, text: this.customMsgService.translate('profile'), icon: 'k-i-user', path: '/profile', selected: false },
+            // { separator: true },
+            // { id: 4, text: this.customMsgService.translate('info'), icon: 'k-i-information', path: '/info', selected: false },
             { separator: true },
             // { text: this.customMsgService.translate('Window'), icon: 'k-i-information', path: '/window', selected: false },
             { id: 5, text: 'Master', icon: 'k-i-information', path: '/master', selected: false },
             { id: 6, text: 'Master-Detail', icon: 'k-i-information', path: '/search', selected: false },
             { id: 7, text: 'Single Grid', icon: 'k-i-information', path: '/singlegrid', selected: false },
-            {
-                text: "Members",
-                icon: "k-i-bell",
-                id: 9,
-                parentId: 8,
-              },
-              {
-                text: "People Management",
-                icon: "k-i-calendar",
-                id: 8,
-              },
-              {
-                text: "Volunteers",
-                icon: "k-i-edit",
-                id: 10,
-                parentId: 8,
-              },
+            // {
+            //     text: "Members",
+            //     icon: "k-i-bell",
+            //     id: 9,
+            //     parentId: 8,
+            //   },
+            //   {
+            //     text: "People Management",
+            //     icon: "k-i-calendar",
+            //     id: 8,
+            //   },
+            //   {
+            //     text: "Volunteers",
+            //     icon: "k-i-edit",
+            //     id: 10,
+            //     parentId: 8,
+            //   },
         ];
     }
 

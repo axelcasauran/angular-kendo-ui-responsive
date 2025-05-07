@@ -1,7 +1,5 @@
 # angular-kendo-ui-responsive
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.2.9.
-
 A developer-first framework that lets you auto-generate `fully responsive forms`, `grids`, and `pages` from a simple JSON schema — no manual UI design needed. Build internal tools, CRUD apps, and dashboards 10x faster.
 
 **Desktop**
@@ -21,4 +19,10 @@ A developer-first framework that lets you auto-generate `fully responsive forms`
 
 ## Development server
 
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.0.0.
+
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+
+## Author
+
+email me: hi@axelbryan.com
